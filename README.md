@@ -28,3 +28,5 @@ Like:
 ```shell
 $ mini_statsd 9125
 ```
+
+A simple example of a code that sends the statsd message from the gif can be found [here](https://gist.github.com/IgorMarques/079b08c3bbb13e8d896151a192262e8b)
