@@ -1,15 +1,17 @@
 require 'term/ansicolor'
 
 class PortSanitizer
-  def self.get_port(args)
+  DEFAULT_PORT = 8125
+
+  def self.sanitize(port = DEFAULT_PORT)
     color = Term::ANSIColor
 
-    port = args.first.to_i
+    port = port.to_i
 
-    if port < 1024
+    if port < 1024 || port > 49151
       puts "#{color.yellow('Invalid or no port informed. Assigning default port (8125)')}.\n\n"
 
-      port = 8125
+      return DEFAULT_PORT
     end
 
     port
