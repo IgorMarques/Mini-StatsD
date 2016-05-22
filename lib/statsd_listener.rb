@@ -5,18 +5,18 @@ require_relative 'port_sanitizer'
 class StatsdListener
   include Term::ANSIColor
 
-  def self.run(args)
+  def self.run(port)
     puts "Starting MiniStatsd...\n\n"
 
-    new(args).run
+    new(port).run
   end
 
-  def initialize(args)
+  def initialize(port:)
     $stdout.sync = true
 
     @socket = UDPSocket.new
-    @port = PortSanitizer.get_port(args)
-    
+    @port = PortSanitizer.sanitize(port)
+
     @socket.bind(nil, @port)
   end
 
