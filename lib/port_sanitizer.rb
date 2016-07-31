@@ -8,8 +8,8 @@ class PortSanitizer
 
     port = port.to_i
 
-    if port < 1024 || port > 49151
-      puts "#{color.yellow('Invalid or no port informed. Assigning default port (8125)')}.\n\n"
+    unless port.between?(1024, 49151)
+      puts "#{color.yellow("Invalid or no port informed. Assigning default port (#{DEFAULT_PORT})")}.\n\n"
 
       return DEFAULT_PORT
     end
