@@ -17,16 +17,16 @@ $ mini_statsd
 
 Simple as that :)
 
-If you want to set a specific port, just run:
+If you want to set a specific port and binding host, just run:
 
 ```shell
-$ mini_statsd <port>
+$ mini_statsd <port> <host>
 ```
 
 Like:
 
 ```shell
-$ mini_statsd 9125
+$ mini_statsd 9125 0.0.0.0
 ```
 
 A simple example of a code that sends the statsd message from the gif can be found [here](https://gist.github.com/IgorMarques/079b08c3bbb13e8d896151a192262e8b)
