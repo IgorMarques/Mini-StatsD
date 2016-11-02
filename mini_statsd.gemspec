@@ -3,8 +3,7 @@ Gem::Specification.new do |s|
 
   s.summary     = "Mini StatsD"
   s.description = "A super simple StatsD receiver"
-  s.version     = '0.3.0'
-  s.date        = '2016-01-14'
+  s.version     = '0.3.1'
   s.homepage    = 'https://github.com/IgorMarques/Mini-StatsD'
   s.license     = 'MIT'
 
