@@ -16,7 +16,7 @@ class StatsdListener
 
     @socket = UDPSocket.new
     @port = PortSanitizer.sanitize(port)
-    @host = host
+    @host = host.nil? ? '127.0.0.1' : host
 
     @socket.bind(@host, @port)
   end
